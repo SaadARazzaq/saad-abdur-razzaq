@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "coat",
+				"type": "Text"
+			},
+			"message_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor aliquip eu nostrud nulla duis. Laboris amet minim elit sint tempor consequat incididunt consequat elit velit amet non. Voluptate occaecat irure qui quis voluptate consequat nisi Lorem pariatur eiusmod in velit."
+						}
+					}
+				]
+			},
+			"email_address": {
+				"__TYPE__": "FieldContent",
+				"value": "good",
+				"type": "Text"
+			},
+			"contact_me": {
+				"__TYPE__": "FieldContent",
+				"value": "ice",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
