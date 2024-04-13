@@ -1,0 +1,27 @@
+.tech-list-container {
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .bounded-div {
+    margin-bottom: 20px; /* Add margin between heading and tech items */
+  }
+  
+  .heading-xl {
+    font-size: 24px; /* Increase font size for the heading */
+  }
+  
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add gap between tech items */
+  }
+  
+  .tech-item {
+    font-size: 24px; /* Adjust font size for tech icons */
+    transition: color 0.3s ease; /* Add transition effect for color change */
+  }
+  
+  .tech-item:hover {
+    color: #ff0000; /* Change color on hover */
+  }
+  
