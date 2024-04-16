@@ -1,18 +1,58 @@
+// import { Metadata } from "next";
+// import { notFound } from "next/navigation";
+
+// import { createClient } from "@/prismicio";
+
+// import ContentBody from "@/components/ContentBody";
+// import { formatDate } from "@/app/utils/formatDate";
+
+// type Params = { uid: string };
+
+// export default async function Page({ params }: { params: Params }) {
+//   const client = createClient();
+//   const page = await client
+//     .getByUID("papers", params.uid)
+//     .catch(() => notFound());
+
+//   return <ContentBody page={page} />;
+// }
+
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: Params;
+// }): Promise<Metadata> {
+//   const client = createClient();
+//   const page = await client
+//     .getByUID("papers", params.uid)
+//     .catch(() => notFound());
+
+//   return {
+//     title: page.data.title,
+//     description: page.data.meta_description,
+//   };
+// }
+
+// export async function generateStaticParams() {
+//   const client = createClient();
+//   const pages = await client.getAllByType("papers");
+
+//   return pages.map((page) => {
+//     return { uid: page.uid };
+//   });
+// }
+
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { createClient } from "@/prismicio";
-
-import ContentBody from "@/components/ContentBody";
-import { formatDate } from "@/app/utils/formatDate";
+import ContentBody from "@/components/ContentBody"; // Assuming this component is correctly imported
+import { formatDate } from "@/app/utils/formatDate"; // Assuming this utility function is correctly imported
 
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-  const page = await client
-    .getByUID("papers", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("papers", params.uid).catch(() => notFound());
 
   return <ContentBody page={page} />;
 }
@@ -23,9 +63,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const client = createClient();
-  const page = await client
-    .getByUID("papers", params.uid)
-    .catch(() => notFound());
+  const page = await client.getByUID("papers", params.uid).catch(() => notFound());
 
   return {
     title: page.data.title,
@@ -38,6 +76,6 @@ export async function generateStaticParams() {
   const pages = await client.getAllByType("papers");
 
   return pages.map((page) => {
-    return { uid: page.uid };
+    return { params: { uid: page.uid } };
   });
 }
