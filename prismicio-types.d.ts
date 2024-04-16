@@ -334,100 +334,6 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PapersDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
-
-/**
- * Content for Papers documents
- */
-interface PapersDocumentData {
-  /**
-   * Title field in *Papers*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: papers.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Date field in *Papers*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: papers.date
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  date: prismic.DateField;
-
-  /**
-   * Hover Image field in *Papers*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: papers.hover_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  hover_image: prismic.ImageField<never>;
-
-  /**
-   * Slice Zone field in *Papers*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: papers.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<PapersDocumentDataSlicesSlice> /**
-   * Meta Description field in *Papers*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: papers.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Papers*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: papers.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Papers*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: papers.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Papers document from Prismic
- *
- * - **API ID**: `papers`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type PapersDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<PapersDocumentData>, "papers", Lang>;
-
 type PersonalProjectsDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
 
 /**
@@ -808,7 +714,6 @@ export type AllDocumentTypes =
   | CertificationsDocument
   | HomepageDocument
   | PageDocument
-  | PapersDocument
   | PersonalProjectsDocument
   | ProjectDocument
   | SettingsDocument;
@@ -1034,7 +939,7 @@ export interface ContentIndexSliceContentIndexBlogsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   content_type: prismic.SelectField<
-    "Blog" | "Projects" | "Personal Projects" | "Certifications" | "Papers"
+    "Blog" | "Projects" | "Personal Projects" | "Certifications"
   >;
 
   /**
@@ -1104,7 +1009,7 @@ export interface ContentIndexSliceContentIndexCertificationsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   content_type: prismic.SelectField<
-    "Blog" | "Projects" | "Personal Projects" | "Certifications" | "Papers"
+    "Blog" | "Projects" | "Personal Projects" | "Certifications"
   >;
 
   /**
@@ -1175,7 +1080,7 @@ export interface ContentIndexSliceContentIndexHackathonsPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   content_type: prismic.SelectField<
-    "Blog" | "Projects" | "Personal Projects" | "Certifications" | "Papers"
+    "Blog" | "Projects" | "Personal Projects" | "Certifications"
   >;
 
   /**
@@ -1266,7 +1171,7 @@ export interface ContentIndexCertSliceDefaultPrimary {
    * - **API ID Path**: content_index_cert.primary.content_type
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  content_type: prismic.SelectField<"Certifications" | "Blog" | "Papers">;
+  content_type: prismic.SelectField<"Certifications" | "Blog">;
 
   /**
    * Description field in *ContentIndexCert → Primary*
@@ -1853,9 +1758,6 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
-      PapersDocument,
-      PapersDocumentData,
-      PapersDocumentDataSlicesSlice,
       PersonalProjectsDocument,
       PersonalProjectsDocumentData,
       PersonalProjectsDocumentDataSlicesSlice,

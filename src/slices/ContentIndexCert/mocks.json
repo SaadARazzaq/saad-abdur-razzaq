@@ -10,7 +10,7 @@
 			},
 			"content_type": {
 				"__TYPE__": "FieldContent",
-				"value": "Papers",
+				"value": "Blog",
 				"type": "Select"
 			},
 			"description": {

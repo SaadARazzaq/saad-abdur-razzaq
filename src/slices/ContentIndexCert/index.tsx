@@ -19,10 +19,10 @@ export type ContentIndexCertProps =
 const ContentIndexCert = async ({ slice }: ContentIndexCertProps): Promise<JSX.Element> => {  
   const client = createClient()
   const certifications = await client.getAllByType("certifications")
-  const researchPapers = await client.getAllByType("papers")
+  const blogs = await client.getAllByType("blog_post")
 
   const contentType = slice.primary.content_type || "Certifications"
-  const items = contentType === "Papers" ? researchPapers : certifications
+  const items = contentType === "Blog" ? blogs : certifications
   
   return (
     <Bounded

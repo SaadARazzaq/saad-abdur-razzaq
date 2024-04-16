@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 type ContentListProps = {
-  items: Content.PapersDocument[] | Content.CertificationsDocument[];
+  items: Content.BlogPostDocument[] | Content.CertificationsDocument[];
   contentType: Content.ContentIndexSlice["primary"]["content_type"];
   fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
   viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
@@ -25,7 +25,7 @@ export default function ContentList({
   const component = useRef(null);
   const revealRef = useRef(null);
   const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
-  const urlPrefixes = contentType === "Certifications" ? "/certifications" : "/papers";
+  const urlPrefixes = contentType === "Certifications" ? "/certifications" : "/blog";
   const lastMousePos = useRef({ x: 0, y: 0 });
 
   useEffect(()=>{
