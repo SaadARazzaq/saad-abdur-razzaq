@@ -9,7 +9,7 @@
 
 </div>
 
-![image](https://github.com/SaadARazzaq/saad-abdur-razzaq/assets/123338307/f7830416-a443-4674-bc33-bc69de9ebd14)
+<!-- ![image](https://github.com/SaadARazzaq/saad-abdur-razzaq/assets/123338307/f7830416-a443-4674-bc33-bc69de9ebd14) -->
 
 🚀 Welcome to my captivating personal portfolio website, where innovation meets creativity! Crafted with the latest technologies, this platform showcases my skills and achievements in a visually stunning and interactive manner.
 
