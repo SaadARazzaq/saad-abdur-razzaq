@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "link_block": {
+              "type": "SharedSlice"
+            },
             "integrations": {
               "type": "SharedSlice"
             },

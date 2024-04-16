@@ -12,34 +12,11 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "contact_me": {
-          "type": "Text",
+        "form": {
+          "type": "Embed",
           "config": {
-            "label": "Contact Me",
+            "label": "form",
             "placeholder": ""
-          }
-        },
-        "name": {
-          "type": "Text",
-          "config": {
-            "label": "Name",
-            "placeholder": "Enter Your Name"
-          }
-        },
-        "email_address": {
-          "type": "Text",
-          "config": {
-            "label": "Email Address",
-            "placeholder": "Enter Your Email Address"
-          }
-        },
-        "message_description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Message Description",
-            "placeholder": "Enter Your Message",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
