@@ -1,0 +1,51 @@
+{
+  "id": "link_block",
+  "type": "SharedSlice",
+  "name": "LinkBlock",
+  "description": "LinkBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "github_link": {
+          "type": "Link",
+          "config": {
+            "label": "GitHub Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "youtube_link": {
+          "type": "Link",
+          "config": {
+            "label": "YouTube Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "deployed_link": {
+          "type": "Link",
+          "config": {
+            "label": "Deployed Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "dataset_link": {
+          "type": "Link",
+          "config": {
+            "label": "Dataset Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

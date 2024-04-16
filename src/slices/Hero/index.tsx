@@ -6,6 +6,7 @@ import { Shapes } from "@/slices/Hero/Shapes";
 import Bounded from "@/components/Bounded";
 import gsap from "gsap";
 
+import "./Hero.css";
 /**
  * Props for `Hero`.
  */

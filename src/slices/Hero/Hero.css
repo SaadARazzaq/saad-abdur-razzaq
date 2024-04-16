@@ -1,0 +1,23 @@
+/* Hero.css */
+
+/* Styling for scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+::-webkit-scrollbar-track-piece {
+    background-color: #00061300; /* Track color (you can adjust this if needed) */
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #203671; /* Bluish color for the scrollbar thumb */
+    outline: 2px solid #000613;
+    outline-offset: -2px;
+    border: 0.1px solid #B7B7B7;
+    border-radius: 50px;
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0F172A; /* Darker bluish color on hover */
+  }
+  

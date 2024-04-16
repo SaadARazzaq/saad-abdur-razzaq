@@ -266,6 +266,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | LinkBlockSlice
   | IntegrationsSlice
   | ContentIndexCertSlice
   | ExperienceSlice
@@ -525,7 +526,10 @@ export type PersonalProjectsDocument<Lang extends string = string> =
     Lang
   >;
 
-type ProjectDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type ProjectDocumentDataSlicesSlice =
+  | LinkBlockSlice
+  | ImageBlockSlice
+  | TextBlockSlice;
 
 /**
  * Content for Project documents
@@ -899,44 +903,14 @@ export type BiographySlice = prismic.SharedSlice<
  */
 export interface ContactMeSliceDefaultPrimary {
   /**
-   * Contact Me field in *ContactMe → Primary*
+   * form field in *ContactMe → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Embed
    * - **Placeholder**: *None*
-   * - **API ID Path**: contact_me.primary.contact_me
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: contact_me.primary.form
+   * - **Documentation**: https://prismic.io/docs/field#embed
    */
-  contact_me: prismic.KeyTextField;
-
-  /**
-   * Name field in *ContactMe → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter Your Name
-   * - **API ID Path**: contact_me.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Email Address field in *ContactMe → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Enter Your Email Address
-   * - **API ID Path**: contact_me.primary.email_address
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  email_address: prismic.KeyTextField;
-
-  /**
-   * Message Description field in *ContactMe → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Enter Your Message
-   * - **API ID Path**: contact_me.primary.message_description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  message_description: prismic.RichTextField;
+  form: prismic.EmbedField;
 }
 
 /**
@@ -1668,6 +1642,81 @@ export type IntegrationsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LinkBlock → Primary*
+ */
+export interface LinkBlockSliceDefaultPrimary {
+  /**
+   * GitHub Link field in *LinkBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_block.primary.github_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  github_link: prismic.LinkField;
+
+  /**
+   * YouTube Link field in *LinkBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_block.primary.youtube_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  youtube_link: prismic.LinkField;
+
+  /**
+   * Deployed Link field in *LinkBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_block.primary.deployed_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  deployed_link: prismic.LinkField;
+
+  /**
+   * Dataset Link field in *LinkBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: link_block.primary.dataset_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  dataset_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for LinkBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinkBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LinkBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LinkBlock*
+ */
+type LinkBlockSliceVariation = LinkBlockSliceDefault;
+
+/**
+ * LinkBlock Shared Slice
+ *
+ * - **API ID**: `link_block`
+ * - **Description**: LinkBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinkBlockSlice = prismic.SharedSlice<
+  "link_block",
+  LinkBlockSliceVariation
+>;
+
+/**
  * Primary content in *TechList → Primary*
  */
 export interface TechListSliceDefaultPrimary {
@@ -1857,6 +1906,10 @@ declare module "@prismicio/client" {
       IntegrationsSliceDefaultItem,
       IntegrationsSliceVariation,
       IntegrationsSliceDefault,
+      LinkBlockSlice,
+      LinkBlockSliceDefaultPrimary,
+      LinkBlockSliceVariation,
+      LinkBlockSliceDefault,
       TechListSlice,
       TechListSliceDefaultPrimary,
       TechListSliceDefaultItem,

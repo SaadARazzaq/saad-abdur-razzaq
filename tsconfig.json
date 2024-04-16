@@ -38,7 +38,7 @@
     ".svelte-kit/**/*.ts",
     ".svelte-kit/**/*.svelte",
     ".next/types/**/*.ts"
-  ],
+, "src/slices/ContactMe/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
