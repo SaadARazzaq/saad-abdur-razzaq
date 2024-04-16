@@ -127,7 +127,12 @@ export default function ContentList({
                 key={index}
                 className="list-item opacity-0f"
                 onMouseEnter={() => onMouseEnter(index)}
-                ref={(el) => (itemsRef.current[index] = el)}
+                ref={(el: HTMLLIElement | null) => {
+                  if (el) {
+                    itemsRef.current[index] = el;
+                  }
+                }}
+                
               >
                 <Link
                   href={urlPrefixes + "/" + item.uid}
